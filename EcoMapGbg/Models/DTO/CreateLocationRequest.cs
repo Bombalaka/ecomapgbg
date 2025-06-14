@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace EcoMapGbg.Models
-{
+namespace EcoMapGbg.Models.DTO;
+
     public class CreateLocationRequest
 {
     [Required]
@@ -26,5 +26,4 @@ namespace EcoMapGbg.Models
     public bool IsFree { get; set; }
 
     public List<string> Tags { get; set; } = new();
-}
 }

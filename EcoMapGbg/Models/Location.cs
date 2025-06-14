@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace EcoMapGbg.Models;
+namespace EcoMapGbg.Models.Enum;
 
 public class Location
 {
@@ -44,14 +44,6 @@ public class Location
 
     private static double ToRadians(double degrees) => degrees * Math.PI / 180;
 
-    public enum LocationType
-{
-    SecondHand,
-    FreeShop,
-    RecyclingCenter,
-    BikeWorkshop,
-    RepairCafe,
-    ClothingSwap
-}
+    
 
 }

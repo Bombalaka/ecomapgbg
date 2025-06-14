@@ -1,5 +1,5 @@
-namespace EcoMapGbg.Models
-{
+namespace EcoMapGbg.Models.DTO;
+
     public class NearbySearchRequest
 {
     public double Latitude { get; set; }
@@ -9,4 +9,5 @@ namespace EcoMapGbg.Models
     public bool? OnlyFree { get; set; }
 }
 
-}
+// This class represents a request for searching nearby locations.
+// It includes properties for latitude, longitude, radius, type of location,

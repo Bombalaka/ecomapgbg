@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace EcoMapGbg.Models
-{
+namespace EcoMapGbg.Models.DTO;
+
     public class LocationSummaryDto
 {
     public string Id { get; set; } = "";
@@ -13,4 +13,5 @@ namespace EcoMapGbg.Models
     public bool IsFree { get; set; }
     public double? DistanceKm { get; set; }
 }
-}
+// This class represents a summary of a location, including its ID, name, address, type,
+// latitude, longitude, whether it is free, and optionally the distance from a search point.
