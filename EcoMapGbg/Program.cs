@@ -21,6 +21,8 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new() { Title = "EcoMapGBG API", Version = "v1" });
 });
 
+builder.Services.AddSignalR();
+
 // MongoDB setup
 var connectionString = builder.Configuration.GetConnectionString("MongoDB") ?? "mongodb://localhost:27020";
 builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionString));
@@ -70,11 +72,14 @@ app.UseCors();
 app.UseAntiforgery();
 
 app.MapStaticAssets();
+//  Configure Blazor and API Endpoints
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 // Add API endpoints
 app.MapControllers();
+//  Map SignalR Hub
+app.MapHub<MapHub>("/maphub");
 
 // Simple API root
 app.MapGet("/api", () => new

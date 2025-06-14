@@ -16,13 +16,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EcoMapGbg.blhtk7nipy.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"blhtk7nipy"},{"Name":"integrity","Value":"sha256-T/5rxUKQ5U8v\u002Bh1TQDqLizYtMHJPZW0UEIC\u002B2US9rWg="},{"Name":"label","Value":"_content/EcoMapGbg/EcoMapGbg.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5965"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022T/5rxUKQ5U8v\u002Bh1TQDqLizYtMHJPZW0UEIC\u002B2US9rWg=\u0022"},{"Name":"Last-Modified","Value":"Sat, 14 Jun 2025 15:46:11 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5965"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022T/5rxUKQ5U8v\u002Bh1TQDqLizYtMHJPZW0UEIC\u002B2US9rWg=\u0022"},{"Name":"Last-Modified","Value":"Sat, 14 Jun 2025 21:59:26 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EcoMapGbg/EcoMapGbg.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EcoMapGbg.blhtk7nipy.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-T/5rxUKQ5U8v\u002Bh1TQDqLizYtMHJPZW0UEIC\u002B2US9rWg="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5965"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022T/5rxUKQ5U8v\u002Bh1TQDqLizYtMHJPZW0UEIC\u002B2US9rWg=\u0022"},{"Name":"Last-Modified","Value":"Sat, 14 Jun 2025 15:46:11 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5965"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022T/5rxUKQ5U8v\u002Bh1TQDqLizYtMHJPZW0UEIC\u002B2US9rWg=\u0022"},{"Name":"Last-Modified","Value":"Sat, 14 Jun 2025 21:59:26 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EcoMapGbg/favicon.ifv42okdf2.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>
