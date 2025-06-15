@@ -56,13 +56,11 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
 
 |---------------|--------------------------|
 
-| Backend       | ASP.NET Core, C#, Clean Architecture, DDD |
+| Backend       | ASP.NET Core, C#, Clean code|
 
 | Frontend      | Razor Pages |
 
-| Database      | MongoDB                  |
-
-| Testing       | xUnit                     |
+| Database      | MongoDB, Docker  |
 
 | DevOps        | GitHub Actions, Docker   |
 
