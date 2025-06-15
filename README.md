@@ -2,14 +2,7 @@
 
 ## 🌱 Connecting Gothenburg with reuse spots, second-hand shops, and repair hubs for a more circular city. 🌱
 
-  
-  
-
-```markdown
-
 # ♻️ EcoMapGbg (Återbrukskartan)
-
-  
 
 > A location-based web app for promoting reuse, sharing, and circular consumption in Gothenburg.
 
@@ -188,6 +181,11 @@ dotnet run --project EcoMapGbg
   
 
 ---
+## 🔒 Security & Privacy
+
+- MongoDB connection is protected using environment variables.
+- Inputs are validated both client- and server-side.
+- No user tracking or ads are used.
 
 ## 📄 License
 
