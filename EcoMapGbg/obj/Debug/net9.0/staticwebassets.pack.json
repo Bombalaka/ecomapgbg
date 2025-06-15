@@ -9,8 +9,16 @@
       "PackagePath": "staticwebassets\\app.css"
     },
     {
+      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\js\\map.js",
+      "PackagePath": "staticwebassets\\js\\map.js"
     },
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",

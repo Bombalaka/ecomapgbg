@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace EcoMapGbg.Models.Enum;
+namespace EcoMapGbg.Models;
 
 public class Location
 {

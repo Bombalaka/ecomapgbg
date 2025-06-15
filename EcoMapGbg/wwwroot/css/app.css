@@ -1,0 +1,179 @@
+/* 🎨 GLOBAL STYLES */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* 🌟 BRAND COLORS */
+.text-success {
+    color: #28a745 !important;
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+/* 🗺️ MAP STYLES */
+.custom-marker {
+    background: none;
+    border: none;
+}
+
+#map {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 💬 LOCATION POPUP STYLES */
+.location-popup h5 {
+    margin-bottom: 10px;
+    color: #28a745;
+    font-weight: 600;
+}
+
+.location-popup p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.location-popup small {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* 📋 CARD STYLES */
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 15px 20px;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-weight: 600;
+    color: #495057;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* 🔘 BUTTON STYLES */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-outline-primary {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* 📝 FORM STYLES */
+.form-control,
+.form-select {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+/* 🏷️ BADGE STYLES */
+.badge {
+    font-size: 0.875em;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.badge.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+/* ⚠️ VALIDATION STYLES */
+.alert-danger {
+    border-radius: 6px;
+    border: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    font-size: 0.9em;
+}
+
+/* 🔄 LOADING SPINNER */
+.spinner-border {
+    animation: spinner-border 0.75s linear infinite;
+}
+
+/* 🎯 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    /* 📱 Mobile Styles */
+    .container-fluid {
+        padding: 10px;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    #map {
+        height: 400px !important;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 📱 Extra Small Mobile */
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .card-header {
+        padding: 10px 15px;
+    }
+    
+    .card-header h5 {
+        font-size: 1rem;
+    }
+}

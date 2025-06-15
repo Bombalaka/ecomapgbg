@@ -1,7 +1,90 @@
 ﻿@page "/"
+@using EcoMapGbg.Models
+@using EcoMapGbg.Models.DTO
+@using EcoMapGbg.Services
+@inject ILocationService LocationService
+@inject ILogger<Home> Logger
 
-<PageTitle>Home</PageTitle>
+<PageTitle>🌱 EcoMapGBG</PageTitle>
 
-<h1>Hello, world!</h1>
+<h2 class="mb-4">🌱 EcoMapGBG</h2>
 
-Welcome to your new app.
+<!-- 🔍 Search Bar -->
+<div class="d-flex mb-3">
+    <input class="form-control me-2" style="max-width: 300px;" placeholder="Search places..." @bind="searchTerm" />
+    <button class="btn btn-primary" @onclick="Search">🔍 Search</button>
+</div>
+
+<!-- Location Cards -->
+@if (filteredLocations.Count == 0)
+{
+    <p>No results found.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var location in filteredLocations)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="text-success">@location.Name</h5>
+                        <p>@location.Description</p>
+                        <p><i class="bi bi-geo-alt-fill"></i> @location.Address</p>
+                        <span class="badge bg-success">@location.Type</span>
+                        @if (location.IsFree)
+                        {
+                            <span class="badge bg-info ms-2">Free</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<!-- ➕ Add New Place -->
+<div class="card mt-5 shadow-sm">
+    <div class="card-header bg-success text-white">
+        ➕ Add New Place
+    </div>
+    <div class="card-body">
+        <LocationForm OnLocationAdded="HandleLocationAdded" />
+    </div>
+</div>
+
+@code {
+    private List<Location> locations = new();
+    private List<Location> filteredLocations = new();
+    private string searchTerm = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        locations = await LocationService.GetAllLocationsAsync();
+        filteredLocations = locations;
+    }
+
+    private void Search()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredLocations = locations;
+        }
+        else
+        {
+            filteredLocations = locations
+                .Where(loc =>
+                    loc.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    loc.Address.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    loc.Type.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+    }
+
+    private void HandleLocationAdded(Location newLoc)
+    {
+        locations.Add(newLoc);
+        Search(); // Reapply filter after adding
+    }
+
+}

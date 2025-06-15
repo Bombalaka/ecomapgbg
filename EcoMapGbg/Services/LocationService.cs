@@ -1,7 +1,7 @@
 using EcoMapGbg.Models;
 using EcoMapGbg.Models.DTO;
 using EcoMapGbg.Data;
-using EcoMapGbg.Models.Enum;
+
 
 namespace EcoMapGbg.Services;
 

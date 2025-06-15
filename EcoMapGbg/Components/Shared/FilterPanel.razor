@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">🔍 Filter</h5>
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label class="form-label">Typ av plats</label>
+            <select class="form-select" @onchange="OnTypeChanged">
+                <option value="">Alla typer</option>
+                <option value="SecondHand">🛍 Second hand</option>
+                <option value="FreeShop">🎁 Gratisbutik</option>
+                <option value="RecyclingCenter">♻️ Återvinning</option>
+                <option value="BikeWorkshop">🚲 Cykelverkstad</option>
+                <option value="RepairCafe">🔧 Repair Café</option>
+            </select>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" @onchange="OnFreeChanged" />
+            <label class="form-check-label">🆓 Endast gratis</label>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public EventCallback<LocationFilter> OnFilterChanged { get; set; }
+
+    private LocationFilter currentFilter = new();
+
+    private async Task OnTypeChanged(ChangeEventArgs e)
+    {
+        currentFilter.Type = e.Value?.ToString();
+        await OnFilterChanged.InvokeAsync(currentFilter);
+    }
+
+    private async Task OnFreeChanged(ChangeEventArgs e)
+    {
+        currentFilter.OnlyFree = bool.Parse(e.Value?.ToString() ?? "false");
+        await OnFilterChanged.InvokeAsync(currentFilter);
+    }
+
+    public class LocationFilter
+    {
+        public string? Type { get; set; }
+        public bool OnlyFree { get; set; }
+    }
+}

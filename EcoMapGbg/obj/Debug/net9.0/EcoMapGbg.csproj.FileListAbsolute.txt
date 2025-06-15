@@ -47,6 +47,8 @@ C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\Components\Layout\
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\bundle\EcoMapGbg.styles.css
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\projectbundle\EcoMapGbg.bundle.scp.css
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\kcn81jp7sy-khy4lop6wu.gz
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\p499rcnjde-a7vvdb5fwa.gz
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\7tyrfaikpx-kvi21tukan.gz
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\9f8h0k4nq9-bqjiyaj88i.gz
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\hrp236y6gp-c2jlpeoesf.gz
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\ebsj95sevu-erw9l3u2r3.gz
@@ -108,3 +110,5 @@ C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\refint\EcoMapGbg.dll
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.pdb
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.genruntimeconfig.cache
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\ref\EcoMapGbg.dll
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.RazorAssemblyInfo.cache
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.RazorAssemblyInfo.cs

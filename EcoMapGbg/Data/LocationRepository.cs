@@ -1,6 +1,7 @@
 using MongoDB.Driver;
 using EcoMapGbg.Models;
-using EcoMapGbg.Models.Enum;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 
 namespace EcoMapGbg.Data;

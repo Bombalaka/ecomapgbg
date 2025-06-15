@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xdhUBoqAbqstTfs+Qf1dxIbZiv7VZhHwRGEPCex+l0g=",
+  "Hash": "euJB2DgmoCVqviJmf5UZ3xsgNVTCLKvcr5wwYDEScWE=",
   "Source": "EcoMapGbg",
   "BasePath": "_content/EcoMapGbg",
   "Mode": "Default",
@@ -267,6 +267,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\7tyrfaikpx-kvi21tukan.gz",
+      "SourceId": "EcoMapGbg",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/EcoMapGbg",
+      "RelativePath": "js/map#[.{fingerprint=kvi21tukan}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\js\\map.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "dqsqat55pv",
+      "Integrity": "9YF/L3fxRk55AD4n+weCtN7m18UH9MeG5WQ48JjyOG0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\js\\map.js"
     },
     {
       "Identity": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\864lggu0nt-blhtk7nipy.gz",
@@ -857,6 +878,27 @@
       "OriginalItemSpec": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
+      "Identity": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\p499rcnjde-a7vvdb5fwa.gz",
+      "SourceId": "EcoMapGbg",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/EcoMapGbg",
+      "RelativePath": "css/app#[.{fingerprint=a7vvdb5fwa}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\css\\app.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "gv388nnqcm",
+      "Integrity": "ZIYXECYeK86p42vsgyASR+CzZIyR2ZEnUysnWLUxYIc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\css\\app.css"
+    },
+    {
       "Identity": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\pgjvx0gp2l-pj5nd1wqec.gz",
       "SourceId": "EcoMapGbg",
       "SourceType": "Discovered",
@@ -1067,6 +1109,27 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
+      "Identity": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\css\\app.css",
+      "SourceId": "EcoMapGbg",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\",
+      "BasePath": "_content/EcoMapGbg",
+      "RelativePath": "css/app#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a7vvdb5fwa",
+      "Integrity": "tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\app.css"
+    },
+    {
       "Identity": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\favicon.png",
       "SourceId": "EcoMapGbg",
       "SourceType": "Discovered",
@@ -1086,6 +1149,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\js\\map.js",
+      "SourceId": "EcoMapGbg",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\",
+      "BasePath": "_content/EcoMapGbg",
+      "RelativePath": "js/map#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kvi21tukan",
+      "Integrity": "8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\map.js"
     },
     {
       "Identity": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
@@ -2312,6 +2396,304 @@
       ]
     },
     {
+      "Route": "css/app.a7vvdb5fwa.css",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\p499rcnjde-a7vvdb5fwa.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000895255148"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1116"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZIYXECYeK86p42vsgyASR+CzZIyR2ZEnUysnWLUxYIc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:18:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a7vvdb5fwa"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.a7vvdb5fwa.css",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3283"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:18:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a7vvdb5fwa"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.a7vvdb5fwa.css.gz",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\p499rcnjde-a7vvdb5fwa.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1116"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZIYXECYeK86p42vsgyASR+CzZIyR2ZEnUysnWLUxYIc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:18:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a7vvdb5fwa"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZIYXECYeK86p42vsgyASR+CzZIyR2ZEnUysnWLUxYIc="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\p499rcnjde-a7vvdb5fwa.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000895255148"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1116"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZIYXECYeK86p42vsgyASR+CzZIyR2ZEnUysnWLUxYIc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:18:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3283"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:18:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tvhR1Kv/BoQQNORlOFtM/F1wJ6KBxEEA9C0qHm/eOLc="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css.gz",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\p499rcnjde-a7vvdb5fwa.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1116"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZIYXECYeK86p42vsgyASR+CzZIyR2ZEnUysnWLUxYIc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:18:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZIYXECYeK86p42vsgyASR+CzZIyR2ZEnUysnWLUxYIc="
+        }
+      ]
+    },
+    {
       "Route": "EcoMapGbg.blhtk7nipy.bundle.scp.css",
       "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\864lggu0nt-blhtk7nipy.gz",
       "Selectors": [
@@ -2336,7 +2718,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2397,7 +2779,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2442,7 +2824,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2497,7 +2879,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2558,7 +2940,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2603,7 +2985,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2658,7 +3040,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2711,7 +3093,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2748,7 +3130,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2795,7 +3177,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2848,7 +3230,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2885,7 +3267,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 14 Jun 2025 21:59:26 GMT"
+          "Value": "Sun, 15 Jun 2025 00:34:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2986,6 +3368,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+        }
+      ]
+    },
+    {
+      "Route": "js/map.js",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\7tyrfaikpx-kvi21tukan.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000987166831"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1012"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9YF/L3fxRk55AD4n+weCtN7m18UH9MeG5WQ48JjyOG0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A="
+        }
+      ]
+    },
+    {
+      "Route": "js/map.js",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\js\\map.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2318"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A="
+        }
+      ]
+    },
+    {
+      "Route": "js/map.js.gz",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\7tyrfaikpx-kvi21tukan.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1012"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9YF/L3fxRk55AD4n+weCtN7m18UH9MeG5WQ48JjyOG0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9YF/L3fxRk55AD4n+weCtN7m18UH9MeG5WQ48JjyOG0="
+        }
+      ]
+    },
+    {
+      "Route": "js/map.kvi21tukan.js",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\7tyrfaikpx-kvi21tukan.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000987166831"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1012"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9YF/L3fxRk55AD4n+weCtN7m18UH9MeG5WQ48JjyOG0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kvi21tukan"
+        },
+        {
+          "Name": "label",
+          "Value": "js/map.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A="
+        }
+      ]
+    },
+    {
+      "Route": "js/map.kvi21tukan.js",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\js\\map.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2318"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kvi21tukan"
+        },
+        {
+          "Name": "label",
+          "Value": "js/map.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8B6JRvBDSrm3feRMv619nsdOp2bRvh+OIWlWnIzQg8A="
+        }
+      ]
+    },
+    {
+      "Route": "js/map.kvi21tukan.js.gz",
+      "AssetFile": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\compressed\\7tyrfaikpx-kvi21tukan.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1012"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9YF/L3fxRk55AD4n+weCtN7m18UH9MeG5WQ48JjyOG0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 14 Jun 2025 22:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kvi21tukan"
+        },
+        {
+          "Name": "label",
+          "Value": "js/map.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9YF/L3fxRk55AD4n+weCtN7m18UH9MeG5WQ48JjyOG0="
         }
       ]
     },
