@@ -125,6 +125,12 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
 
 ````
 ---
+## SCREENSHOTS:
+![homepage](images/homepage.png)
+![add](images/add.png)
+![map](images/map-view.png)
+![Location](images/location-details.png)
+![bild5](images/bild5.png)
 
 ---
 
