@@ -1,0 +1,43 @@
+@page "/browse"
+@inject ILocationService LocationService
+@using EcoMapGbg.Models
+
+<h2 class="eco-title">💚 Browse Eco Places</h2>
+
+<CategoryFilter OnFilterSelected="HandleFilterChange" />
+
+@if (locations == null)
+{
+    <p>Loading places...</p>
+}
+else if (locations.Count == 0)
+{
+    <p>No places found.</p>
+}
+else
+{
+    <div class="place-list">
+        @foreach (var place in locations)
+        {
+            <PlaceCard TLocation="Location" Location="place" />
+        }
+    </div>
+}
+
+@code {
+    private List<Location> allLocations = new();
+    private List<Location> locations = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allLocations = await LocationService.GetAllLocationsAsync();
+        locations = allLocations;
+    }
+
+    private void HandleFilterChange(string selectedType)
+    {
+        locations = allLocations
+            .Where(l => l.Type.Equals(selectedType, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+    }
+}

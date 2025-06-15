@@ -1,0 +1,22 @@
+@code {
+    [Parameter]
+    public EventCallback<string> OnFilterSelected { get; set; }
+
+    private string selectedCategory = "";
+
+    private async Task SelectFilter(string category)
+    {
+        selectedCategory = category;
+        await OnFilterSelected.InvokeAsync(category);
+    }
+}
+
+<h4>Filter by Type</h4>
+<div class="category-list">
+    @foreach (var category in new[] { "SecondHand", "Vegan", "Repair", "Recycle", "Garden" })
+    {
+        <button class="category-btn" @onclick="() => SelectFilter(category)">
+            @category
+        </button>
+    }
+</div>

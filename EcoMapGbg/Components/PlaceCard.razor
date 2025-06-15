@@ -1,0 +1,14 @@
+@using EcoMapGbg.Models
+@typeparam TLocation
+@code {
+    [Parameter]
+    public Location Location { get; set; } = default!;
+}
+
+<div class="place-card">
+    <h3>@Location.Name</h3>
+    <p><strong>Category:</strong> @Location.Type</p>
+    <p><strong>Address:</strong> @Location.Address</p>
+    <p><strong>Description:</strong> @Location.Description</p>
+</div>
+
