@@ -1,33 +1,46 @@
-﻿@inherits LayoutComponentBase
-@inject NavigationManager NavigationManager
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace EcoMapGbg.Components.Layout
+@inherits LayoutComponentBase
+<link href="~/Components/Layout/MainLayout.css" rel="stylesheet" />
 
-<PageTitle>🌱 EcoMapGBG</PageTitle>
-
-<div class="container-fluid px-0">
-    <!-- TOP NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success px-3">
-        <a class="navbar-brand" href="/">🌱 EcoMapGBG</a>
-
-        <div class="d-flex flex-grow-1 mx-3">
-            <input class="form-control" @bind="searchInput" @bind:event="oninput" placeholder="Sök platser..." />
+<div class="page">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light eco-gradient">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="/">
+                <span class="fs-2">🌱</span> Ecomapgbg
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link text-white fw-semibold" href="/">🏠 Home</a>
+                    <a class="nav-link text-white fw-semibold" href="/places">🗺️ Places</a>
+                    <a class="nav-link text-white fw-semibold" href="/journey">🌟 My Journey</a>
+                    <a class="nav-link text-white fw-semibold" href="/login">🔑 Log in</a>
+                </div>
+            </div>
         </div>
-
-        <button class="btn btn-light" @onclick="NavigateToAdd">➕ Lägg till plats</button>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <main class="container mt-4">
-        @Body
+    <!-- Main Content -->
+    <main class="container-fluid" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); min-height: 90vh;">
+        <div class="container py-4">
+            @Body
+        </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p class="mb-0">© @DateTime.Now.Year EcoMapGbg - Made with 💚 for sustainability</p>
+        </div>
+    </footer>
 </div>
 
-
-
-@code {
-    private string searchInput = "";
-
-    private void NavigateToAdd()
-    {
-        NavigationManager.NavigateTo("/");
-    }
-}
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>

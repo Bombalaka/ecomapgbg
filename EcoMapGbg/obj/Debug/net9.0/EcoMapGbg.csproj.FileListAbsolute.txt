@@ -42,8 +42,6 @@ C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.AssemblyInfo.cs
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.csproj.CoreCompileInputs.cache
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.RazorAssemblyInfo.cache
-C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.RazorAssemblyInfo.cs
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\bundle\EcoMapGbg.styles.css
@@ -95,8 +93,6 @@ C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\8qxdbyqea4-notf2x
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\e2k7t9cqe2-h1s4sie4z3.gz
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\2gewojdl6u-63fj8s7r0e.gz
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\gpcygz1inz-0j3bgjxly4.gz
-C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\j88pt8z9ye-blhtk7nipy.gz
-C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\864lggu0nt-blhtk7nipy.gz
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -113,3 +109,5 @@ C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.pdb
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.genruntimeconfig.cache
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\ref\EcoMapGbg.dll
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\8cokf5o2zz-2gcckdqdkm.gz
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\j88pt8z9ye-raj2ig4adk.gz
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\864lggu0nt-raj2ig4adk.gz

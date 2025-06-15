@@ -96,3 +96,48 @@ main[b-pbntlpit6b] {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+/* ECO-FRIENDLY STYLES */
+.eco-gradient[b-pbntlpit6b] { 
+    background: linear-gradient(135deg, #28a745, #20c997); 
+}
+
+.eco-card[b-pbntlpit6b] { 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    border-radius: 10px; 
+    transition: transform 0.3s; 
+}
+
+.eco-card:hover[b-pbntlpit6b] { 
+    transform: translateY(-5px); 
+}
+
+.mascot[b-pbntlpit6b] { 
+    font-size: 4rem; 
+    margin: 20px; 
+}
+
+.category-icon[b-pbntlpit6b] { 
+    font-size: 3rem; 
+    margin-bottom: 15px; 
+}
+
+.navbar-brand:hover[b-pbntlpit6b] { 
+    color: white !important; 
+    text-decoration: none; 
+}
+
+.nav-link:hover[b-pbntlpit6b] { 
+    background-color: rgba(255, 255, 255, 0.1) !important; 
+    border-radius: 5px; 
+}
+
+@media (max-width: 768px) {
+    .navbar-nav[b-pbntlpit6b] {
+        margin-top: 1rem;
+    }
+    .nav-link[b-pbntlpit6b] {
+        padding: 0.5rem 1rem !important;
+        margin: 0.25rem 0;
+    }
+}

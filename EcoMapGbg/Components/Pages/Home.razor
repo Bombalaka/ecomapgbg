@@ -1,21 +1,102 @@
 ﻿@page "/"
+@inject ILocationService LocationService
 
-<h1 class="eco-title">🌿 Welcome to EcomapGbg</h1>
+<PageTitle>🌱 Ecomapgbg</PageTitle>
 
-<p class="eco-subtitle">Discover eco-friendly places in Göteborg</p>
-
-<div class="eco-buttons">
-    <NavLink class="eco-btn" href="/browse">💚 Browse Places</NavLink>
-    <NavLink class="eco-btn" href="/eco-journey">🌍 My Eco Journey</NavLink>
+<!-- Hero Section -->
+<div class="text-center py-5">
+    <div class="mascot">🌱</div>
+    <h1 class="display-3 fw-bold eco-gradient text-white p-3 rounded mb-4" style="display: inline-block;">
+        Ecomapgbg
+    </h1>
+    <p class="lead text-muted mb-4">
+        Discover Gothenburg's friendliest eco-places: second-hand shops,<br>
+        vegan cafés, recycling stations, repair spots, and community gardens.
+    </p>
+    <p class="text-success fw-bold fs-5">Made with warmth for everyone — from kids to grandmas 💚</p>
 </div>
 
-<section class="eco-categories">
-    <h3>Explore Categories</h3>
-    <div class="category-list">
-        <span class="category-tag">♻️ Second-hand</span>
-        <span class="category-tag">🌱 Vegan</span>
-        <span class="category-tag">🔧 Repair</span>
-        <span class="category-tag">🌻 Gardens</span>
-        <span class="category-tag">🚯 Recycle</span>
+<!-- Categories -->
+<div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-2">
+        <div class="card eco-card h-100 text-center p-3">
+            <div class="category-icon">♻️</div>
+            <h6 class="fw-bold">Second-hand</h6>
+        </div>
     </div>
-</section>
+    <div class="col-6 col-md-4 col-lg-2">
+        <div class="card eco-card h-100 text-center p-3">
+            <div class="category-icon">🌱</div>
+            <h6 class="fw-bold">Vegan cafés</h6>
+        </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+        <div class="card eco-card h-100 text-center p-3">
+            <div class="category-icon">♻️</div>
+            <h6 class="fw-bold">Recycling</h6>
+        </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+        <div class="card eco-card h-100 text-center p-3">
+            <div class="category-icon">🚲</div>
+            <h6 class="fw-bold">Repairs</h6>
+        </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+        <div class="card eco-card h-100 text-center p-3">
+            <div class="category-icon">☀️</div>
+            <h6 class="fw-bold">Gardens</h6>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Stats -->
+@if (locationCount > 0)
+{
+    <div class="text-center">
+        <h3 class="text-success mb-3">🌟 Current Impact</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card eco-card p-4">
+                    <h2 class="text-success">@locationCount</h2>
+                    <p class="mb-0">Eco Places</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card eco-card p-4">
+                    <h2 class="text-success">♻️</h2>
+                    <p class="mb-0">Sustainable Living</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card eco-card p-4">
+                    <h2 class="text-success">🌍</h2>
+                    <p class="mb-0">Better Future</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="text-center mt-5">
+    <a href="/places" class="btn btn-success btn-lg px-5 py-3">
+        🗺️ Explore All Places
+    </a>
+</div>
+
+@code {
+    private int locationCount = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var locations = await LocationService.GetAllLocationsAsync();
+            locationCount = locations.Count;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading location count: {ex.Message}");
+        }
+    }
+}
