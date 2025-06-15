@@ -50,23 +50,13 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
 
 ## 🧪 Tech Stack
 
-  
-
-| Area          | Technology              |
-
-|---------------|--------------------------|
-
-| Backend       | ASP.NET Core, C#, Clean Architecture, DDD |
-
-| Frontend      | Razor Pages |
-
-| Database      | MongoDB                  |
-
-| Testing       | xUnit                     |
-
-| DevOps        | GitHub Actions, Docker   |
-
-| Docs          | Swagger / OpenAPI        |
+| Area          | Technology                |
+|---------------|---------------------------|
+| Backend       | ASP.NET Core, C#, Clean Code |
+| Frontend      | Razor Pages               |
+| Database      | MongoDB, Docker           |
+| DevOps        | GitHub Actions, Docker    |
+| Docs          | Swagger / OpenAPI         |
 
   
 
