@@ -1,0 +1,174 @@
+@using EcoMapGbg.Models.DTO
+@inject ILocationService LocationService
+@inject IJSRuntime JSRuntime
+
+<!-- Modal -->
+<div class="modal fade @(isVisible ? "show" : "")" 
+     style="display: @(isVisible ? "block" : "none")" 
+     tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header eco-gradient text-white">
+                <h5 class="modal-title">
+                    <span class="fs-4">🌱</span> Add New Eco Place
+                </h5>
+                <button type="button" class="btn-close btn-close-white" @onclick="Hide"></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+                <EditForm Model="newLocation" OnValidSubmit="HandleSubmit">
+                    <DataAnnotationsValidator />
+                    
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <div class="alert alert-danger">@errorMessage</div>
+                    }
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">🏪 Place Name *</label>
+                            <InputText class="form-control" @bind-Value="newLocation.Name" 
+                                       placeholder="e.g., Green Heart Café" />
+                            <ValidationMessage For="@(() => newLocation.Name)" class="text-danger" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">📂 Category *</label>
+                            <InputSelect class="form-select" @bind-Value="newLocation.Type">
+                                <option value="">Select category...</option>
+                                <option value="SecondHand">🛍️ Second-hand Shop</option>
+                                <option value="VeganCafe">🌱 Vegan Café</option>
+                                <option value="RecyclingCenter">♻️ Recycling Center</option>
+                                <option value="RepairCafe">🔧 Repair Café</option>
+                                <option value="Garden">☀️ Community Garden</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(() => newLocation.Type)" class="text-danger" />
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-bold">📍 Address *</label>
+                            <InputText class="form-control" @bind-Value="newLocation.Address" 
+                                       placeholder="e.g., Vasagatan 10, 41124 Göteborg" />
+                            <ValidationMessage For="@(() => newLocation.Address)" class="text-danger" />
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-bold">📝 Description</label>
+                            <InputTextArea class="form-control" @bind-Value="newLocation.Description" 
+                                          rows="3" 
+                                          placeholder="What makes this place special..." />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">🌐 Latitude</label>
+                            <InputNumber class="form-control" @bind-Value="newLocation.Latitude" 
+                                        placeholder="57.7089" step="0.000001" />
+                            <ValidationMessage For="@(() => newLocation.Latitude)" class="text-danger" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">🌐 Longitude</label>
+                            <InputNumber class="form-control" @bind-Value="newLocation.Longitude" 
+                                        placeholder="11.9746" step="0.000001" />
+                            <ValidationMessage For="@(() => newLocation.Longitude)" class="text-danger" />
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <InputCheckbox class="form-check-input" @bind-Value="newLocation.IsFree" />
+                                <label class="form-check-label fw-bold">
+                                    🆓 Free to use/visit
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="Hide">Cancel</button>
+                <button type="button" class="btn btn-success" @onclick="HandleSubmit" disabled="@isSubmitting">
+                    @if (isSubmitting)
+                    {
+                        <span class="spinner-border spinner-border-sm me-2"></span>
+                    }
+                    🌱 Add Eco Place
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Backdrop -->
+@if (isVisible)
+{
+    <div class="modal-backdrop fade show" @onclick="Hide"></div>
+}
+
+@code {
+    [Parameter] public EventCallback<Location> OnLocationAdded { get; set; }
+
+    private bool isVisible = false;
+    private bool isSubmitting = false;
+    private string errorMessage = string.Empty;
+    private CreateLocationRequest newLocation = new();
+
+    public void Show()
+    {
+        isVisible = true;
+        ResetForm();
+        StateHasChanged();
+    }
+
+    public void Hide()
+    {
+        isVisible = false;
+        StateHasChanged();
+    }
+
+    private void ResetForm()
+    {
+        newLocation = new CreateLocationRequest();
+        errorMessage = string.Empty;
+        isSubmitting = false;
+    }
+
+    private async Task HandleSubmit()
+    {
+        if (isSubmitting) return;
+
+        try
+        {
+            isSubmitting = true;
+            errorMessage = string.Empty;
+            StateHasChanged();
+
+            // Validate coordinates
+            if (newLocation.Latitude == 0 || newLocation.Longitude == 0)
+            {
+                errorMessage = "Please provide valid coordinates (use Göteborg: 57.7089, 11.9746)";
+                return;
+            }
+
+            // Call your existing service!
+            var location = await LocationService.CreateLocationAsync(newLocation);
+            
+            await OnLocationAdded.InvokeAsync(location);
+            await JSRuntime.InvokeVoidAsync("alert", "🌱 Eco place added successfully!");
+            
+            Hide();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged();
+        }
+    }
+}
