@@ -2,13 +2,13 @@
 @typeparam TLocation
 @code {
     [Parameter]
-    public Location Location { get; set; } = default!;
+    public Location Item { get; set; } = default!;
 }
 
 <div class="place-card">
-    <h3>@Location.Name</h3>
-    <p><strong>Category:</strong> @Location.Type</p>
-    <p><strong>Address:</strong> @Location.Address</p>
-    <p><strong>Description:</strong> @Location.Description</p>
+    <h3>@Item.Name</h3>
+    <p><strong>Category:</strong> @Item.Type</p>
+    <p><strong>Address:</strong> @Item.Address</p>
+    <p><strong>Description:</strong> @Item.Description</p>
 </div>
 
