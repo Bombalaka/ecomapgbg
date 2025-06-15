@@ -111,7 +111,7 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
 │
 ├── docker-compose.yml      #  MongoDB
 │
-└──  ecomapgbg.sln
+└──  ecomapgbg.sln](https://github.com/Bombalaka/ecomapgbg)
 
 ````
 ---
