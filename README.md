@@ -83,11 +83,6 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
 
 ## 🗂️ Project Structure
 
-  
-
-EcoMapGbg/
-
-
 ├── EcoMapGbg/                # Single ASP.NET Core project
 │
 ├── EcoMapGbg.csproj
