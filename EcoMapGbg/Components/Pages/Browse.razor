@@ -2,27 +2,28 @@
 @inject ILocationService LocationService
 @using EcoMapGbg.Models
 
-<h2 class="eco-title">💚 Browse Eco Places</h2>
+<div class="browse-container">
+    <h2 class="eco-title">💚 Browse Eco Places</h2>
+    <CategoryFilter OnFilterSelected="HandleFilterChange" />
 
-<CategoryFilter OnFilterSelected="HandleFilterChange" />
-
-@if (locations == null)
-{
-    <p>Loading places...</p>
-}
-else if (locations.Count == 0)
-{
-    <p>No places found.</p>
-}
-else
-{
-    <div class="place-list">
-        @foreach (var place in locations)
-        {
-            <PlaceCard TLocation="Location" Location="place" />
-        }
-    </div>
-}
+    @if (locations == null)
+    {
+        <p>Loading places...</p>
+    }
+    else if (locations.Count == 0)
+    {
+        <p>No places found.</p>
+    }
+    else
+    {
+        <div class="place-list">
+            @foreach (var place in locations)
+            {
+                <PlaceCard TLocation="Location" Item="place" />
+            }
+        </div>
+    }
+</div>
 
 @code {
     private List<Location> allLocations = new();
@@ -40,4 +41,5 @@ else
             .Where(l => l.Type.Equals(selectedType, StringComparison.OrdinalIgnoreCase))
             .ToList();
     }
+}
 }

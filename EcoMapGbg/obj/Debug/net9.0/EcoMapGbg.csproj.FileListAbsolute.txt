@@ -42,6 +42,8 @@ C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.AssemblyInfo.cs
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.csproj.CoreCompileInputs.cache
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.RazorAssemblyInfo.cache
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.RazorAssemblyInfo.cs
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\scopedcss\bundle\EcoMapGbg.styles.css
@@ -110,5 +112,4 @@ C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\refint\EcoMapGbg.dll
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.pdb
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.genruntimeconfig.cache
 C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\ref\EcoMapGbg.dll
-C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.RazorAssemblyInfo.cache
-C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\EcoMapGbg.RazorAssemblyInfo.cs
+C:\Users\yotak\ecomapgbg\EcoMapGbg\obj\Debug\net9.0\compressed\8cokf5o2zz-1ipjvkob8m.gz
