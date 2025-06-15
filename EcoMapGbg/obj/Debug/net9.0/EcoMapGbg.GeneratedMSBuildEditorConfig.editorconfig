@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXRlZ29yeUZpbHRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/AddLocationModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRMb2NhdGlvbk1vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/Browse.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCcm93c2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,12 +44,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/Places.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQbGFjZXMucmF6b3I=
+[C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/MyEcoJourney.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNeUVjb0pvdXJuZXkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/ServiceTest.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXJ2aWNlVGVzdC5yYXpvcg==
+[C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/Places.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQbGFjZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/PlaceCard.razor]

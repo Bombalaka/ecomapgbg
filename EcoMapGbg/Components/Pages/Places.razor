@@ -7,6 +7,13 @@
     <h1 class="text-success">🗺️ All Eco-Friendly Places</h1>
     <span class="badge bg-success fs-6">@locations.Count places</span>
 </div>
+<div>
+    <button class="btn btn-success me-2 mb-3 mt-2" @onclick="ShowAddModal">
+        ➕ Add New Place
+    </button>
+</div>
+
+
 
 @if (isLoading)
 {
@@ -46,12 +53,12 @@ else if (locations.Any())
                         @if (!string.IsNullOrEmpty(location.Description))
                         {
                             <p class="card-text">
-                                @(location.Description.Length > 100 ? 
-                                  location.Description.Substring(0, 100) + "..." : 
-                                  location.Description)
-                            </p>
-                        }
-                       
+                                @(location.Description.Length > 100 ?
+                                                    location.Description.Substring(0, 100) + "..." :
+                                                    location.Description)
+                </p>
+                                }
+
                     </div>
                     <div class="card-footer bg-light">
                         <small class="text-muted">
@@ -108,7 +115,7 @@ else
     private string GetTypeDisplayName(string type) => type switch
     {
         "SecondHand" => "Second-hand Shop",
-        "VeganCafe" => "Vegan Café", 
+        "VeganCafe" => "Vegan Café",
         "RecyclingCenter" => "Recycling Center",
         "RepairCafe" => "Repair Café",
         "Garden" => "Community Garden",
@@ -119,7 +126,7 @@ else
     private string FormatTimeAgo(DateTime dateTime)
     {
         var timeSpan = DateTime.Now - dateTime;
-        
+
         if (timeSpan.Days > 0)
             return $"{timeSpan.Days} days ago";
         else if (timeSpan.Hours > 0)
@@ -128,5 +135,17 @@ else
             return $"{timeSpan.Minutes} minutes ago";
         else
             return "Just now";
+    }
+    private AddLocationModal addLocationModal = default!;
+
+    private void ShowAddModal()
+    {
+        addLocationModal.Show();
+    }
+
+    private async Task OnLocationAdded(Location newLocation)
+    {
+        locations.Add(newLocation);
+        StateHasChanged();
     }
 }
