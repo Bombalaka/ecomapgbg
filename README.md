@@ -154,7 +154,6 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
   
 ### Clone and run
 
-
 ```bash
 
 # 1. Clone repo
@@ -162,6 +161,8 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
 git clone https://github.com/Bombalaka/ecomapgbg.git
 
 cd ecomapgbg
+
+Run `docker-compose up -d` to start MongoDB
 
 
 # 2. Build 
