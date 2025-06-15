@@ -1,6 +1,7 @@
 @page "/browse"
 @inject ILocationService LocationService
 @using EcoMapGbg.Models
+@using EcoMapGbg.Components
 
 <div class="browse-container">
     <h2 class="eco-title">💚 Browse Eco Places</h2>
@@ -19,7 +20,7 @@
         <div class="place-list">
             @foreach (var place in locations)
             {
-                <PlaceCard TLocation="Location" Item="place" />
+                <PlaceCard Item="place" />
             }
         </div>
     }
@@ -42,4 +43,4 @@
             .ToList();
     }
 }
-}
+
