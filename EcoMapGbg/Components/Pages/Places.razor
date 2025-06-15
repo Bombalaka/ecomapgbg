@@ -1,6 +1,7 @@
 @page "/places"
 @using EcoMapGbg.Models.DTO
 @inject ILocationService LocationService
+@inject IJSRuntime JSRuntimes
 
 <PageTitle>Places - Ecomapgbg</PageTitle>
 
@@ -52,11 +53,11 @@ else if (locations.Any())
                         @if (!string.IsNullOrEmpty(location.Description))
                         {
                             <p class="card-text">
-                                @(location.Description.Length > 100 ? 
-                                  location.Description.Substring(0, 100) + "..." : 
-                                  location.Description)
-                            </p>
-                        }
+                                @(location.Description.Length > 100 ?
+                                                    location.Description.Substring(0, 100) + "..." :
+                                                    location.Description)
+                </p>
+                                }
                     </div>
                     <div class="card-footer bg-light">
                         <small class="text-muted">
@@ -81,9 +82,8 @@ else
 }
 
 <!-- Modal HTML directly in this component -->
-<div class="modal fade @(isModalVisible ? "show" : "")" 
-     style="display: @(isModalVisible ? "block" : "none")" 
-     tabindex="-1">
+<div class="modal fade @(isModalVisible ? "show" : "")" style="display: @(isModalVisible ? "block" : "none")"
+    tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header eco-gradient text-white">
@@ -95,7 +95,7 @@ else
             <div class="modal-body">
                 <EditForm Model="newLocation" OnValidSubmit="HandleSubmit">
                     <DataAnnotationsValidator />
-                    
+
                     @if (!string.IsNullOrEmpty(errorMessage))
                     {
                         <div class="alert alert-danger">@errorMessage</div>
@@ -104,8 +104,8 @@ else
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label class="form-label fw-bold">🏪 Place Name *</label>
-                            <InputText class="form-control" @bind-Value="newLocation.Name" 
-                                       placeholder="e.g., Green Heart Café" />
+                            <InputText class="form-control" @bind-Value="newLocation.Name"
+                                placeholder="e.g., Green Heart Café" />
                             <ValidationMessage For="@(() => newLocation.Name)" class="text-danger" />
                         </div>
 
@@ -124,28 +124,27 @@ else
 
                         <div class="col-12">
                             <label class="form-label fw-bold">📍 Address *</label>
-                            <InputText class="form-control" @bind-Value="newLocation.Address" 
-                                       placeholder="e.g., Vasagatan 10, 41124 Göteborg" />
+                            <InputText class="form-control" @bind-Value="newLocation.Address"
+                                placeholder="e.g., Vasagatan 10, 41124 Göteborg" />
                             <ValidationMessage For="@(() => newLocation.Address)" class="text-danger" />
                         </div>
 
                         <div class="col-12">
                             <label class="form-label fw-bold">📝 Description</label>
-                            <InputTextArea class="form-control" @bind-Value="newLocation.Description" 
-                                          rows="3" 
-                                          placeholder="What makes this place special..." />
+                            <InputTextArea class="form-control" @bind-Value="newLocation.Description" rows="3"
+                                placeholder="What makes this place special..." />
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label fw-bold">🌐 Latitude</label>
-                            <InputNumber class="form-control" @bind-Value="newLocation.Latitude" 
-                                        placeholder="57.7089" step="0.000001" />
+                            <InputNumber class="form-control" @bind-Value="newLocation.Latitude" placeholder="57.7089"
+                                step="0.000001" />
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label fw-bold">🌐 Longitude</label>
-                            <InputNumber class="form-control" @bind-Value="newLocation.Longitude" 
-                                        placeholder="11.9746" step="0.000001" />
+                            <InputNumber class="form-control" @bind-Value="newLocation.Longitude" placeholder="11.9746"
+                                step="0.000001" />
                         </div>
 
                         <div class="col-12">
@@ -205,6 +204,7 @@ else
 
     private void ShowAddModal()
     {
+        Console.WriteLine("Button clicked!");
         isModalVisible = true;
         newLocation = new CreateLocationRequest();
         errorMessage = string.Empty;
@@ -263,7 +263,7 @@ else
     private string GetTypeDisplayName(string type) => type switch
     {
         "SecondHand" => "Second-hand Shop",
-        "VeganCafe" => "Vegan Café", 
+        "VeganCafe" => "Vegan Café",
         "RecyclingCenter" => "Recycling Center",
         "RepairCafe" => "Repair Café",
         "Garden" => "Community Garden",
@@ -274,7 +274,7 @@ else
     private string FormatTimeAgo(DateTime dateTime)
     {
         var timeSpan = DateTime.Now - dateTime;
-        
+
         if (timeSpan.Days > 0)
             return $"{timeSpan.Days} days ago";
         else if (timeSpan.Hours > 0)

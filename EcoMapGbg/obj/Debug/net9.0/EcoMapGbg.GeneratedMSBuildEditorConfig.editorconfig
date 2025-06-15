@@ -24,16 +24,8 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/CategoryFilter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXRlZ29yeUZpbHRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/AddLocationModal.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRMb2NhdGlvbk1vZGFsLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/Browse.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCcm93c2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yotak/ecomapgbg/EcoMapGbg/Components/Pages/Error.razor]
