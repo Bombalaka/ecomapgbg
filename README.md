@@ -124,6 +124,7 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
 └──  ecomapgbg.sln
 
 ````
+---
 
 ---
 
