@@ -1,19 +1,18 @@
 @page "/places"
+@using EcoMapGbg.Models.DTO
 @inject ILocationService LocationService
 
 <PageTitle>Places - Ecomapgbg</PageTitle>
 
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex justify-content-between align-items-center mb-5">
     <h1 class="text-success">🗺️ All Eco-Friendly Places</h1>
-    <span class="badge bg-success fs-6">@locations.Count places</span>
+    <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-success" @onclick="ShowAddModal">
+            ➕ Add New Place
+        </button>
+        <span class="badge bg-success fs-6">@locations.Count places</span>
+    </div>
 </div>
-<div>
-    <button class="btn btn-success me-2 mb-3 mt-2" @onclick="ShowAddModal">
-        ➕ Add New Place
-    </button>
-</div>
-
-
 
 @if (isLoading)
 {
@@ -53,12 +52,11 @@ else if (locations.Any())
                         @if (!string.IsNullOrEmpty(location.Description))
                         {
                             <p class="card-text">
-                                @(location.Description.Length > 100 ?
-                                                    location.Description.Substring(0, 100) + "..." :
-                                                    location.Description)
-                </p>
-                                }
-
+                                @(location.Description.Length > 100 ? 
+                                  location.Description.Substring(0, 100) + "..." : 
+                                  location.Description)
+                            </p>
+                        }
                     </div>
                     <div class="card-footer bg-light">
                         <small class="text-muted">
@@ -76,13 +74,117 @@ else
         <div class="display-1">🌱</div>
         <h3 class="text-muted mt-3">No eco places yet</h3>
         <p class="text-muted">Be the first to add an eco-friendly location!</p>
-        <a href="/api/locations" class="btn btn-outline-primary">View API Data</a>
+        <button class="btn btn-success" @onclick="ShowAddModal">
+            ➕ Add Place
+        </button>
     </div>
+}
+
+<!-- Modal HTML directly in this component -->
+<div class="modal fade @(isModalVisible ? "show" : "")" 
+     style="display: @(isModalVisible ? "block" : "none")" 
+     tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header eco-gradient text-white">
+                <h5 class="modal-title">
+                    <span class="fs-4">🌱</span> Add New Eco Place
+                </h5>
+                <button type="button" class="btn-close btn-close-white" @onclick="HideModal"></button>
+            </div>
+            <div class="modal-body">
+                <EditForm Model="newLocation" OnValidSubmit="HandleSubmit">
+                    <DataAnnotationsValidator />
+                    
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <div class="alert alert-danger">@errorMessage</div>
+                    }
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">🏪 Place Name *</label>
+                            <InputText class="form-control" @bind-Value="newLocation.Name" 
+                                       placeholder="e.g., Green Heart Café" />
+                            <ValidationMessage For="@(() => newLocation.Name)" class="text-danger" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">📂 Category *</label>
+                            <InputSelect class="form-select" @bind-Value="newLocation.Type">
+                                <option value="">Select category...</option>
+                                <option value="SecondHand">🛍️ Second-hand Shop</option>
+                                <option value="VeganCafe">🌱 Vegan Café</option>
+                                <option value="RecyclingCenter">♻️ Recycling Center</option>
+                                <option value="RepairCafe">🔧 Repair Café</option>
+                                <option value="Garden">☀️ Community Garden</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(() => newLocation.Type)" class="text-danger" />
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-bold">📍 Address *</label>
+                            <InputText class="form-control" @bind-Value="newLocation.Address" 
+                                       placeholder="e.g., Vasagatan 10, 41124 Göteborg" />
+                            <ValidationMessage For="@(() => newLocation.Address)" class="text-danger" />
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-bold">📝 Description</label>
+                            <InputTextArea class="form-control" @bind-Value="newLocation.Description" 
+                                          rows="3" 
+                                          placeholder="What makes this place special..." />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">🌐 Latitude</label>
+                            <InputNumber class="form-control" @bind-Value="newLocation.Latitude" 
+                                        placeholder="57.7089" step="0.000001" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">🌐 Longitude</label>
+                            <InputNumber class="form-control" @bind-Value="newLocation.Longitude" 
+                                        placeholder="11.9746" step="0.000001" />
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <InputCheckbox class="form-check-input" @bind-Value="newLocation.IsFree" />
+                                <label class="form-check-label fw-bold">
+                                    🆓 Free to use/visit
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="HideModal">Cancel</button>
+                <button type="button" class="btn btn-success" @onclick="HandleSubmit" disabled="@isSubmitting">
+                    @if (isSubmitting)
+                    {
+                        <span class="spinner-border spinner-border-sm me-2"></span>
+                    }
+                    🌱 Add Eco Place
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (isModalVisible)
+{
+    <div class="modal-backdrop fade show" @onclick="HideModal"></div>
 }
 
 @code {
     private List<Location> locations = new();
     private bool isLoading = true;
+    private bool isModalVisible = false;
+    private bool isSubmitting = false;
+    private string errorMessage = string.Empty;
+    private CreateLocationRequest newLocation = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -101,6 +203,52 @@ else
         }
     }
 
+    private void ShowAddModal()
+    {
+        isModalVisible = true;
+        newLocation = new CreateLocationRequest();
+        errorMessage = string.Empty;
+        StateHasChanged();
+    }
+
+    private void HideModal()
+    {
+        isModalVisible = false;
+        StateHasChanged();
+    }
+
+    private async Task HandleSubmit()
+    {
+        if (isSubmitting) return;
+
+        try
+        {
+            isSubmitting = true;
+            errorMessage = string.Empty;
+            StateHasChanged();
+
+            if (newLocation.Latitude == 0 || newLocation.Longitude == 0)
+            {
+                errorMessage = "Please provide coordinates (try: 57.7089, 11.9746)";
+                return;
+            }
+
+            var location = await LocationService.CreateLocationAsync(newLocation);
+            locations.Add(location);
+            HideModal();
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged();
+        }
+    }
+
     private string GetLocationIcon(string type) => type switch
     {
         "SecondHand" => "🛍️",
@@ -115,7 +263,7 @@ else
     private string GetTypeDisplayName(string type) => type switch
     {
         "SecondHand" => "Second-hand Shop",
-        "VeganCafe" => "Vegan Café",
+        "VeganCafe" => "Vegan Café", 
         "RecyclingCenter" => "Recycling Center",
         "RepairCafe" => "Repair Café",
         "Garden" => "Community Garden",
@@ -126,7 +274,7 @@ else
     private string FormatTimeAgo(DateTime dateTime)
     {
         var timeSpan = DateTime.Now - dateTime;
-
+        
         if (timeSpan.Days > 0)
             return $"{timeSpan.Days} days ago";
         else if (timeSpan.Hours > 0)
@@ -135,17 +283,5 @@ else
             return $"{timeSpan.Minutes} minutes ago";
         else
             return "Just now";
-    }
-    private AddLocationModal addLocationModal = default!;
-
-    private void ShowAddModal()
-    {
-        addLocationModal.Show();
-    }
-
-    private async Task OnLocationAdded(Location newLocation)
-    {
-        locations.Add(newLocation);
-        StateHasChanged();
     }
 }
