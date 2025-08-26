@@ -65,60 +65,40 @@ The project aims to reduce waste and support local sustainability by crowd-sourc
   
 
 ## 🗂️ Project Structure
-
-├── EcoMapGbg/                # Single ASP.NET Core project
-│
-├── EcoMapGbg.csproj
-│
-├── Program.cs
-│
-├── Components/             
-│     ├── Layout/
-│     ├── Pages/
-│     └──  .razor
-│
-├── Controllers/
-│    └── LocationsController.cs
-│
-├── Data/
-│    ├── ILocationRepository.cs
-│    └── LocationRepository.cs
-│
-├── wwwroot/           # Static frontend files
-│     ├── index.html
-│     ├── app.js
-│     └── style.css
-│
-├── Models
-│      ├── DTO/
-│      ├── Enum/
-│      └── Location.cs
-│
-├── Properties
-│      └── launchSettings.json
-│
-├── Services
-│      ├── ILocationService.cs
-│      ├── LocationService.cs
-│      └── MapHub.cs
-│
-│
-├── Program.cs
-│
+```plaintext
+EcoMapGbg/                  # ASP.NET Core project root
+├── EcoMapGbg.csproj        # Project file
+├── Program.cs              # Entry point
+├── Components/             # Reusable UI components
+│   └── Layout/
+│   └── (other .razor files)
+├── Pages/                  # Razor pages
+│   └── (page files)
+├── Controllers/            # MVC Controllers
+│   └── LocationsController.cs
+├── Data/                   # Data access layer
+│   ├── ILocationRepository.cs
+│   └── LocationRepository.cs
+├── Models/                 # Domain models
+│   ├── DTO/
+│   ├── Enum/
+│   └── Location.cs
+├── Properties/
+│   └── launchSettings.json
+├── Services/               # Business logic/services
+│   ├── ILocationService.cs
+│   ├── LocationService.cs
+│   └── MapHub.cs
+├── wwwroot/                # Static frontend files
+│   ├── index.html
+│   ├── app.js
+│   └── style.css
 ├── .gitignore
-│
 ├── README.md
-│
-├── docker-compose.yml      #  MongoDB
-│
-└──  ecomapgbg.sln](https://github.com/Bombalaka/ecomapgbg)
+├── docker-compose.yml      # For MongoDB setup
+└── ecomapgbg.sln           # Solution file
 
 ````
----
----
-
-  
-
 ## 🚀 Getting Started
 
 
