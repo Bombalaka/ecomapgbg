@@ -69,7 +69,7 @@ else
     });
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseCors();
 
 app.UseAntiforgery();
@@ -81,16 +81,8 @@ app.MapRazorComponents<App>()
 
 // Add API endpoints
 app.MapControllers();
-//  Map SignalR Hub
+//  Map SignalR Hub for map 
 app.MapHub<MapHub>("/maphub");
 
-// Simple API root
-app.MapGet("/api", () => new
-{
-    message = "🌱 EcoMapGBG API is running!",
-    blazor = "/",
-    swagger = "/swagger",
-    api = "/api/locations"
-});
 
 app.Run();

@@ -57,7 +57,8 @@ public class LocationService : ILocationService
     {
         try
         {
-            _logger.LogInformation("Creating new location: {LocationName}", request.Name);
+            _logger.LogInformation("Received request: Name={Name}, Address={Address}, Type={Type}", 
+                request.Name, request.Address, request.Type);
 
             // Simple validation
             if (string.IsNullOrWhiteSpace(request.Name))
