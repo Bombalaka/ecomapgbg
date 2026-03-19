@@ -28,6 +28,21 @@ services:
       - mongodb
     networks:
       - mongo_network
+  eco_map_gbg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_MAPBOX_TOKEN=${VITE_MAPBOX_TOKEN:-}
+    ports:
+      - "5000:80"
+    environment:
+      - ConnectionStrings__MongoDB=mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/ecomapgbg?authSource=admin
+      - ASPNETCORE_ENVIRONMENT=Production
+    depends_on:
+      - mongodb
+    networks:
+      - mongo_network
 
 volumes:
   mongodb_data:

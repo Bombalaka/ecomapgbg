@@ -1,28 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\EcoMapGbg.bundle.scp.css",
-      "PackagePath": "staticwebassets\\EcoMapGbg.raj2ig4adk.bundle.scp.css"
-    },
-    {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\app.css",
-      "PackagePath": "staticwebassets\\app.css"
-    },
-    {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\js\\map.js",
-      "PackagePath": "staticwebassets\\js\\map.js"
-    },
-    {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
     },
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
@@ -37,10 +21,6 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
-    },
-    {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
@@ -51,10 +31,6 @@
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
-    },
-    {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
@@ -69,10 +45,6 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
-    },
-    {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
@@ -83,10 +55,6 @@
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
-    },
-    {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
@@ -101,10 +69,6 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
-    },
-    {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
@@ -115,10 +79,6 @@
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
-    },
-    {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
@@ -133,10 +93,6 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
-    },
-    {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
@@ -147,10 +103,6 @@
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
-    },
-    {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
@@ -165,10 +117,6 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
-    },
-    {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
@@ -179,10 +127,6 @@
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
-    },
-    {
-      "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
       "Id": "C:\\Users\\yotak\\ecomapgbg\\EcoMapGbg\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",

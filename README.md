@@ -1,164 +1,156 @@
 # EcoMapGbg
 
-## 🌱 Connecting Gothenburg with reuse spots, second-hand shops, and repair hubs for a more circular city. 🌱
+## Connecting Gothenburg with reuse spots, second-hand shops, and repair hubs for a more circular city.
 
-# ♻️ EcoMapGbg (Återbrukskartan)
-
-> A location-based web app for promoting reuse, sharing, and circular consumption in Gothenburg.
-
-  
+**EcoMapGbg** (Återbrukskartan) is a location-based web app for promoting reuse, sharing, and circular consumption in Gothenburg.
 
 ---
 
-  
+## Project Overview
 
-## 🌍 Project Overview
-
-  
-
-**EcoMapGbg** helps people in Gothenburg discover and share places where items can be reused instead of thrown away – such as second-hand shops, repair stations, swap shelves, and recycling centers.
-
-  
-
-The project aims to reduce waste and support local sustainability by crowd-sourcing reuse locations and making them easy to find via a searchable map interface.
-
-  
+EcoMapGbg helps people in Gothenburg discover and share places where items can be reused instead of thrown away – such as second-hand shops, repair stations, swap shelves, and recycling centers.
 
 ---
 
-  
+## Tech Stack (v2)
 
-## 🎯 Key Features
-
-  
-
-- 📍 Interactive map with reuse locations
-
-- 🗂️ Filter by category, neighborhood, opening hours
-
-- ➕ Add new places via form (crowdsourcing)
-
-- 🧾 Detail page with info, opening hours and contact
-
-- 🌱 Future ideas: event calendar, gamification, Västtrafik integration
-
-  
+| Area       | Technology                    |
+|------------|-------------------------------|
+| Frontend   | Vue 3, Vuetify, Mapbox GL JS   |
+| Backend    | ASP.NET Core 9, C#             |
+| Database   | MongoDB, Docker               |
+| Deployment | Docker Compose                |
+| API Docs   | Swagger / OpenAPI             |
 
 ---
 
-  
+## Project Structure
 
-## 🧪 Tech Stack
-
-| Area          | Technology                |
-|---------------|---------------------------|
-| Backend       | ASP.NET Core, C#, Clean Code |
-| Frontend      | Razor Pages               |
-| Database      | MongoDB, Docker           |
-| DevOps        | GitHub Actions, Docker    |
-| Docs          | Swagger / OpenAPI         |
-
-  
+```
+ecomapgbg/
+├── EcoMapGbg/              # ASP.NET Core API
+│   ├── Controllers/
+│   ├── Data/
+│   ├── Models/
+│   ├── Services/
+│   └── wwwroot/             # Vue build output (Docker)
+├── frontend/                # Vue 3 + Vuetify SPA
+│   ├── src/
+│   │   ├── components/
+│   │   ├── views/
+│   │   ├── services/
+│   │   └── router/
+│   └── package.json
+├── docker-compose.yml
+├── Dockerfile
+└── .env
+```
 
 ---
 
-  
+## Environment Variables
 
-## 🗂️ Project Structure
-```plaintext
-EcoMapGbg/                  # ASP.NET Core project root
-├── EcoMapGbg.csproj        # Project file
-├── Program.cs              # Entry point
-├── Components/             # Reusable UI components
-│   └── Layout/
-│   └── (other .razor files)
-├── Pages/                  # Razor pages
-│   └── (page files)
-├── Controllers/            # MVC Controllers
-│   └── LocationsController.cs
-├── Data/                   # Data access layer
-│   ├── ILocationRepository.cs
-│   └── LocationRepository.cs
-├── Models/                 # Domain models
-│   ├── DTO/
-│   ├── Enum/
-│   └── Location.cs
-├── Properties/
-│   └── launchSettings.json
-├── Services/               # Business logic/services
-│   ├── ILocationService.cs
-│   ├── LocationService.cs
-│   └── MapHub.cs
-├── wwwroot/                # Static frontend files
-│   ├── index.html
-│   ├── app.js
-│   └── style.css
-├── .gitignore
-├── README.md
-├── docker-compose.yml      # For MongoDB setup
-└── ecomapgbg.sln           # Solution file
+### Root `.env` (MongoDB + Docker)
 
-````
-## 🚀 Getting Started
+| Variable        | Description              | Example  |
+|----------------|--------------------------|----------|
+| MONGO_USERNAME | MongoDB admin username   | root     |
+| MONGO_PASSWORD | MongoDB admin password   | example  |
+| MONGO_DB       | Database name            | ecomapgbg |
 
+### Frontend `frontend/.env` (optional, for local dev)
+
+| Variable          | Description                          | Example                    |
+|-------------------|--------------------------------------|----------------------------|
+| VITE_MAPBOX_TOKEN | Mapbox access token (get at mapbox.com) | pk.eyJ1...                 |
+| VITE_API_URL      | API base URL (default: /api for same-origin) | http://localhost:5202/api |
+
+---
+
+## Getting Started
 
 ### Prerequisites
-  
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/)
+- [.NET 9 SDK](https://dotnet.microsoft.com/)
+- [Node.js 20+](https://nodejs.org/)
+- [Docker](https://www.docker.com/) (for MongoDB and full-stack run)
 
-- [MongoDB](https://www.mongodb.com/) or Docker
+### Local Development
 
-- Git
-
--  Swagger  
-
----
-  
-### Clone and run
+**1. Start MongoDB**
 
 ```bash
+docker-compose up -d mongodb mongo-express
+```
 
-# 1. Clone repo
+**2. Run the API**
 
-git clone https://github.com/Bombalaka/ecomapgbg.git
-
-cd ecomapgbg
-
-Run `docker-compose up -d` to start MongoDB
-
-
-# 2. Build 
-
-dotnet build
-
-
-# 3. Run Project
-
+```bash
 dotnet run --project EcoMapGbg
+```
 
+API: http://localhost:5202  
+Swagger: http://localhost:5202/swagger
 
-````
+**3. Run the frontend**
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend: http://localhost:5173 (proxies /api to the API)
+
+**4. Mapbox (optional)**
+
+Create a free token at [mapbox.com](https://mapbox.com) and add to `frontend/.env`:
+
+```
+VITE_MAPBOX_TOKEN=pk.eyJ1...
+```
+
+Without a token, maps use **Leaflet + OpenStreetMap** (free).
+
+**Add place:** Enter an address and click **Hitta från adress**, or click the map to set coordinates. The backend calls [Nominatim](https://nominatim.openstreetmap.org/) (max ~1 request/second per their policy).
+
+### Full Stack with Docker
+
+```bash
+# Optional: add VITE_MAPBOX_TOKEN to .env for map
+docker-compose up --build
+```
+
+App: http://localhost:5000
+
 ---
 
-  
-## 👥 Contributors
+## API Endpoints
 
-* [Nor](https://github.com/NorAjami) – Project Lead
-
-* [Yotaka](https://github.com/Yotaka88) – Project Lead
-
-  
+| Method | Path                    | Description          |
+|--------|-------------------------|----------------------|
+| GET    | /api/locations          | Get all locations    |
+| GET    | /api/locations/{id}     | Get location by ID   |
+| POST   | /api/locations          | Create location      |
+| GET    | /api/locations/search   | Search nearby        |
+| GET    | /api/locations/health   | Health check         |
+| GET    | /api/geocode/search?q=  | Address → lat/lon (Nominatim, Sweden bias) |
 
 ---
-## 🔒 Security & Privacy
 
-- MongoDB connection is protected using environment variables.
-- Inputs are validated both client- and server-side.
-- No user tracking or ads are used.
+## Contributors
 
-## 📄 License
+- [Nor](https://github.com/NorAjami) – Project Lead
+- [Yotaka](https://github.com/Yotaka88) – Project Lead
 
+---
+
+## Security & Privacy
+
+- MongoDB connection uses environment variables.
+- Inputs are validated client- and server-side.
+- No user tracking or ads.
+
+## License
 
 MIT License – feel free to reuse and contribute.
-

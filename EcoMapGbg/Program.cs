@@ -1,4 +1,3 @@
-using EcoMapGbg.Components;
 using MongoDB.Driver;
 using EcoMapGbg.Data;
 using EcoMapGbg.Services;
@@ -8,18 +7,24 @@ var builder = WebApplication.CreateBuilder(args);
 
 Env.Load();
 
-
-
 // Add basic logging
 builder.Services.AddLogging();
 
 // Add controllers
 builder.Services.AddControllers();
+builder.Services.AddSignalR();
 
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
-
+// Nominatim — User-Agent must be ASCII and identify the app (no non-ASCII: can break headers)
+// https://operations.osmfoundation.org/policies/nominatim/
+builder.Services.AddHttpClient("Nominatim", (_, client) =>
+{
+    client.BaseAddress = new Uri("https://nominatim.openstreetmap.org/");
+    client.DefaultRequestHeaders.TryAddWithoutValidation(
+        "User-Agent",
+        "EcoMapGbg/1.0 (https://github.com/ecomapgbg; contact via repo)");
+    client.DefaultRequestHeaders.Accept.ParseAdd("application/json");
+    client.Timeout = TimeSpan.FromSeconds(20);
+});
 
 // Add Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -49,11 +54,9 @@ builder.Services.AddCors(options =>
     });
 });
 
-
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
@@ -61,7 +64,6 @@ if (!app.Environment.IsDevelopment())
 }
 else
 {
-    // Enable Swagger in development
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
@@ -69,20 +71,18 @@ else
     });
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseCors();
 
-app.UseAntiforgery();
+// Serve SPA static files (Vue build output in wwwroot)
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
-app.MapStaticAssets();
-//  Configure Blazor and API Endpoints
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
-// Add API endpoints
+// API endpoints
 app.MapControllers();
-//  Map SignalR Hub for map 
 app.MapHub<MapHub>("/maphub");
 
+// SPA fallback: serve index.html for client routes
+app.MapFallbackToFile("index.html");
 
 app.Run();
