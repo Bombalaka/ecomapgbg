@@ -1,0 +1,11 @@
+# Railway: build & run the repo Dockerfile (Vue build + ASP.NET).
+# https://docs.railway.app/deploy/dockerfiles
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"

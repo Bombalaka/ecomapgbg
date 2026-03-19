@@ -4,6 +4,10 @@
 
 **EcoMapGbg** (Återbrukskartan) is a location-based web app for promoting reuse, sharing, and circular consumption in Gothenburg.
 
+**Roadmap:** see [`ROADMAP.md`](ROADMAP.md) in the repo root (what’s done, near-term, v3+ ideas).
+
+**Deploy (Railway):** step-by-step in [`DEPLOY-RAILWAY.md`](DEPLOY-RAILWAY.md).
+
 ---
 
 ## Project Overview
@@ -41,14 +45,16 @@ ecomapgbg/
 │   │   ├── services/
 │   │   └── router/
 │   └── package.json
-├── docs/
-│   └── ROADMAP.md          # Plan: near-term + future (e.g. eco-resa v3)
+├── ROADMAP.md              # Plan: near-term + future (e.g. eco-resa v3)
+├── frontend/public/
+│   ├── logo-ecomapgbg.svg  # Custom brand mark (map + sprout)
+│   └── favicon.svg
 ├── docker-compose.yml
 ├── Dockerfile
 └── .env
 ```
 
-**App routes:** `/` (home), `/places`, `/places/add`, `/events` (Händelser), `/about`, `/help`.
+**App routes:** `/` (landing / video intro — **only first visit**; then redirects to `/home`). Add `/?replay=1` or use the link on Home to watch the intro again. `/home` (dashboard), `/places`, `/places/add`, `/events` (Händelser), `/about`, `/help`.
 
 ---
 
@@ -64,10 +70,11 @@ ecomapgbg/
 
 ### Frontend `frontend/.env` (optional, for local dev)
 
-| Variable          | Description                          | Example                    |
-|-------------------|--------------------------------------|----------------------------|
-| VITE_MAPBOX_TOKEN | Mapbox access token (get at mapbox.com) | pk.eyJ1...                 |
-| VITE_API_URL      | API base URL (default: /api for same-origin) | http://localhost:5202/api |
+| Variable                 | Description                          | Example                    |
+|--------------------------|--------------------------------------|----------------------------|
+| VITE_MAPBOX_TOKEN        | Mapbox access token (get at mapbox.com) | pk.eyJ1...                 |
+| VITE_LANDING_VIDEO_URL   | Optional MP4 loop for `/` landing (muted background) | `/videos/landing.mp4`      |
+| VITE_API_URL             | API base URL (default: /api for same-origin) | http://localhost:5202/api |
 
 ---
 
@@ -81,11 +88,13 @@ ecomapgbg/
 
 ### Local Development
 
-**1. Start MongoDB**
+**1. Database**
 
-```bash
-docker-compose up -d mongodb mongo-express
-```
+- **MongoDB Atlas:** add `ConnectionStrings__MongoDB` to the repo-root `.env` → skip local Mongo.
+- **Local Mongo in Docker:** run:
+  ```bash
+  docker compose --profile local-mongo up -d mongodb mongo-express
+  ```
 
 **2. Run the API**
 
@@ -120,10 +129,21 @@ Without a token, maps use **Leaflet + OpenStreetMap** (free).
 
 ### Full Stack with Docker
 
+**With MongoDB Atlas** (`.env` has `ConnectionStrings__MongoDB`):
+
 ```bash
-# Optional: add VITE_MAPBOX_TOKEN to .env for map
-docker-compose up --build
+docker compose up --build
 ```
+
+Only the app container runs; it talks to Atlas.
+
+**With local Mongo** (comment out `ConnectionStrings__MongoDB` in `.env` so the compose fallback is used):
+
+```bash
+docker compose --profile local-mongo up --build
+```
+
+Optional: `VITE_MAPBOX_TOKEN` in `.env` for the Docker build (Mapbox in the baked SPA).
 
 App: http://localhost:5000
 

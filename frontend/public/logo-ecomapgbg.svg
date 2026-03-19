@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">EcoMapGbg</title>
+  <defs>
+    <linearGradient id="ecoGrad" x1="12%" y1="8%" x2="88%" y2="92%">
+      <stop offset="0%" stop-color="#43A047"/>
+      <stop offset="55%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#ecoGrad)"/>
+  <path fill="none" stroke="#E8F5E9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+        d="M38 36 60 24 82 36V78L60 90 38 78V36z"/>
+  <path fill="none" stroke="#C8E6C9" stroke-width="3" stroke-linecap="round" d="M60 24v66"/>
+  <path fill="none" stroke="#C8E6C9" stroke-width="3" stroke-linecap="round" d="m38 48 22-6 22 6"/>
+  <path fill="#A5D6A7" d="M56 52c-8 2-14 10-12 18 10-4 18-12 20-22-4-1-6 2-8 4zm8 0c8 2 14 10 12 18-10-4-18-12-20-22 4-1 6 2 8 4z"/>
+  <path fill="#E8F5E9" d="M58 58h4v14c-2 2-4 3-6 4-1-5 0-12 2-18z"/>
+</svg>

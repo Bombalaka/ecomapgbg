@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!-- Hero -->
+    <!-- Calm hero (motion lives on / landing page) -->
     <section class="hero">
       <div class="hero-content">
         <span class="hero-badge">Återbrukskartan</span>
@@ -10,20 +10,20 @@
           recycling stations, repair spots, and community gardens.
         </p>
         <p class="hero-tagline">Made with warmth for everyone — from kids to grandmas</p>
-        <v-btn
-          to="/places"
-          size="x-large"
-          class="hero-cta"
-          color="primary"
-          rounded="xl"
-          elevation="0"
-        >
+        <v-btn to="/places" size="x-large" class="hero-cta" color="primary" rounded="xl" elevation="0">
           Explore the map
         </v-btn>
+        <p class="hero-back">
+          <router-link
+            :to="{ name: 'Landing', query: { replay: '1' } }"
+            class="hero-back-link"
+          >
+            Till startsidan (video)
+          </router-link>
+        </p>
       </div>
     </section>
 
-    <!-- Empty DB CTA -->
     <v-alert
       v-if="loaded && locationCount === 0"
       type="info"
@@ -39,22 +39,16 @@
       </template>
     </v-alert>
 
-    <!-- Categories -->
     <section class="categories">
       <h2 class="section-title">What you'll find</h2>
       <div class="category-grid">
-        <div
-          v-for="cat in categories"
-          :key="cat.name"
-          class="category-card"
-        >
+        <div v-for="(cat, idx) in categories" :key="cat.name + idx" class="category-card">
           <span class="category-icon">{{ cat.icon }}</span>
           <span class="category-name">{{ cat.name }}</span>
         </div>
       </div>
     </section>
 
-    <!-- Stats -->
     <section v-if="locationCount > 0" class="stats">
       <h2 class="section-title">Our impact so far</h2>
       <div class="stats-grid">
@@ -73,11 +67,8 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta">
-      <v-btn to="/places" color="primary" size="large" rounded="xl">
-        View all places
-      </v-btn>
+      <v-btn to="/places" color="primary" size="large" rounded="xl">View all places</v-btn>
     </section>
   </div>
 </template>
@@ -110,65 +101,92 @@ onMounted(async () => {
 
 <style scoped>
 .home {
-  padding-bottom: 4rem;
+  background: radial-gradient(ellipse 120% 80% at 50% -20%, rgba(165, 214, 167, 0.28), transparent 55%),
+    linear-gradient(180deg, #f3faf4 0%, #fafcfa 45%, #fff 100%);
+  margin: -0.5rem -4px 0;
+  padding: 0 4px 3.5rem;
 }
 
 .hero {
-  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #388E3C 100%);
-  border-radius: 24px;
-  padding: 3rem 2rem;
-  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 45%, #2e7d32 100%);
+  border-radius: 22px;
+  padding: 2.75rem 1.5rem;
+  margin-bottom: 2.5rem;
   color: white;
   text-align: center;
 }
 
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
 .hero-badge {
   display: inline-block;
-  background: rgba(255,255,255,0.2);
-  padding: 0.35rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.9rem;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  margin-bottom: 1rem;
-  letter-spacing: 0.5px;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.4px;
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.65rem;
   letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   opacity: 0.95;
-  max-width: 520px;
-  margin: 0 auto 0.5rem;
+  margin: 0 0 0.45rem;
   line-height: 1.6;
 }
 
 .hero-tagline {
-  font-size: 0.95rem;
-  opacity: 0.85;
-  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  margin: 0 0 1.35rem;
+  opacity: 0.88;
 }
 
 .hero-cta {
   text-transform: none;
   font-weight: 600;
-  padding: 0.5rem 2rem !important;
+  padding: 0.45rem 1.75rem !important;
+}
+
+.hero-back {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.hero-back-link {
+  color: #e8f5e9;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-back-link:hover {
+  color: #fff;
 }
 
 .section-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #1B5E20;
-  margin-bottom: 1.25rem;
+  color: #1b5e20;
+  margin-bottom: 1.1rem;
 }
 
 .categories {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .category-grid {
@@ -180,31 +198,31 @@ onMounted(async () => {
 .category-card {
   background: white;
   border-radius: 16px;
-  padding: 1.25rem;
+  padding: 1.2rem;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(27, 94, 32, 0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(27, 94, 32, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(27, 94, 32, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(27, 94, 32, 0.12);
 }
 
 .category-icon {
-  font-size: 2rem;
+  font-size: 1.85rem;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .category-name {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: #333;
 }
 
 .stats {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .stats-grid {
@@ -216,21 +234,21 @@ onMounted(async () => {
 .stat-card {
   background: white;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.35rem;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(27, 94, 32, 0.08);
+  box-shadow: 0 4px 18px rgba(27, 94, 32, 0.07);
 }
 
 .stat-value {
   display: block;
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 700;
-  color: #1B5E20;
-  margin-bottom: 0.25rem;
+  color: #1b5e20;
+  margin-bottom: 0.2rem;
 }
 
 .stat-label {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #666;
 }
 
@@ -240,7 +258,7 @@ onMounted(async () => {
 
 @media (max-width: 600px) {
   .hero {
-    padding: 2rem 1.25rem;
+    padding: 2rem 1.2rem;
   }
   .hero-title {
     font-size: 2rem;

@@ -1,5 +1,16 @@
+# --- Two ways to run the app container (eco_map_gbg) ---
+# 1) MongoDB Atlas (typical): put ConnectionStrings__MongoDB in .env, then:
+#       docker compose up --build
+#    Only the app image runs; local Mongo is NOT started.
+# 2) Local Mongo in Docker: comment out ConnectionStrings__MongoDB in .env (or unset it), then:
+#       docker compose --profile local-mongo up --build
+#    Starts mongodb + mongo-express + app; the app uses the default mongodb://...@mongodb:... URI.
+#
+# depends_on does NOT choose the database — only env ConnectionStrings__MongoDB does.
+
 services:
   mongodb:
+    profiles: [local-mongo]
     image: mongo:latest
     container_name: ecomapgbg-mongo
     restart: always
@@ -15,6 +26,7 @@ services:
       - mongo_network
 
   mongo-express:
+    profiles: [local-mongo]
     image: mongo-express:latest
     container_name: mongo-expressv2
     restart: always
@@ -28,19 +40,21 @@ services:
       - mongodb
     networks:
       - mongo_network
+  # Web API + Vue (Dockerfile). DB string:
+  # - If .env has ConnectionStrings__MongoDB (e.g. Atlas), that is used — same as dotnet run.
+  # - If unset, falls back to the local mongodb service below.
   eco_map_gbg:
     build:
       context: .
       dockerfile: Dockerfile
       args:
         - VITE_MAPBOX_TOKEN=${VITE_MAPBOX_TOKEN:-}
+        - VITE_LANDING_VIDEO_URL=${VITE_LANDING_VIDEO_URL:-}
     ports:
       - "5000:80"
     environment:
-      - ConnectionStrings__MongoDB=mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/ecomapgbg?authSource=admin
+      - ConnectionStrings__MongoDB=${ConnectionStrings__MongoDB:-mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/ecomapgbg?authSource=admin}
       - ASPNETCORE_ENVIRONMENT=Production
-    depends_on:
-      - mongodb
     networks:
       - mongo_network
 

@@ -1,11 +1,53 @@
+using Microsoft.AspNetCore.HttpOverrides;
 using MongoDB.Driver;
 using EcoMapGbg.Data;
 using EcoMapGbg.Services;
 using DotNetEnv;
 
+/*
+ * .env / Env.Load (why & when)
+ * -----------------------------
+ * A file named `.env` is NOT magic to .NET by itself. The package DotNetEnv reads that file
+ * and copies each line into **process environment variables** (same as export VAR=value in Linux).
+ *
+ * Then `builder.Configuration.GetConnectionString("MongoDB")` reads the variable
+ * `ConnectionStrings__MongoDB` (two underscores = nested section "ConnectionStrings").
+ *
+ * `Env.Load()` with no path only looks in the **current working folder** — when you Run from
+ * Visual Studio/Cursor that folder is often `EcoMapGbg/bin/Debug/net9.0`, so your repo-root `.env`
+ * was never found. We walk up directories until we find `.env`.
+ */
+LoadDotEnvFromAncestors();
+
 var builder = WebApplication.CreateBuilder(args);
 
-Env.Load();
+/* Railway / Fly / etc. set PORT — ASP.NET must listen on it (not only 80). */
+var railwayPort = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrEmpty(railwayPort))
+    builder.WebHost.UseUrls($"http://0.0.0.0:{railwayPort}");
+
+static void LoadDotEnvFromAncestors()
+{
+    var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
+    while (dir != null)
+    {
+        var path = Path.Combine(dir.FullName, ".env");
+        if (File.Exists(path))
+        {
+            Env.Load(path);
+            return;
+        }
+        dir = dir.Parent;
+    }
+}
+
+/* So UseHttps + links work behind Railway’s TLS terminator (X-Forwarded-Proto). */
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
 
 // Add basic logging
 builder.Services.AddLogging();
@@ -55,6 +97,8 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+app.UseForwardedHeaders();
 
 // Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())

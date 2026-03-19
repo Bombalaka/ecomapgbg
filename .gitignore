@@ -1,3 +1,4 @@
 .env
 push-erc.sh
-docs/ROADMAP.md
+ROADMAP.md
+DEPLOY-RAILWAY.md

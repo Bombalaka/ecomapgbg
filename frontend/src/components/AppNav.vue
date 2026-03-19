@@ -7,6 +7,14 @@
       width="280"
       class="mobile-drawer"
     >
+      <div class="drawer-brand pa-4">
+        <img src="/logo-ecomapgbg.svg" alt="" width="48" height="48" class="drawer-logo" />
+        <div class="drawer-brand-text">
+          <strong>EcoMapGBG</strong>
+          <span class="text-caption text-medium-emphasis">Återbrukskartan</span>
+        </div>
+      </div>
+      <v-divider />
       <v-list density="comfortable" nav class="pa-2">
         <v-list-item
           v-for="item in menuItems"
@@ -34,15 +42,22 @@
         @click="drawer = true"
       />
       <v-app-bar-title class="d-flex align-center flex-shrink-1">
-        <router-link to="/" class="nav-brand" @click="drawer = false">
-          <span class="nav-logo">🌱</span>
+        <router-link to="/home" class="nav-brand" @click="drawer = false">
+          <img
+            src="/logo-ecomapgbg.svg"
+            alt=""
+            class="nav-logo-img"
+            width="40"
+            height="40"
+            decoding="async"
+          />
           <span class="nav-title d-none d-sm-inline">EcoMapGBG</span>
         </router-link>
       </v-app-bar-title>
       <v-spacer />
       <!-- Desktop / tablet: inline links -->
       <template v-if="!mobileNav">
-        <v-btn variant="text" color="white" to="/" class="nav-link">Hem</v-btn>
+        <v-btn variant="text" color="white" to="/home" class="nav-link">Hem</v-btn>
         <v-btn variant="text" color="white" to="/places" class="nav-link">Platser</v-btn>
         <v-btn variant="text" color="white" to="/events" class="nav-link">Händelser</v-btn>
         <v-btn variant="text" color="white" to="/about" class="nav-link">Om</v-btn>
@@ -72,7 +87,7 @@ const { mdAndDown } = useDisplay()
 const mobileNav = computed(() => mdAndDown.value)
 
 const menuItems = [
-  { title: 'Hem', to: '/', icon: 'mdi-home-outline' },
+  { title: 'Hem', to: '/home', icon: 'mdi-home-outline' },
   { title: 'Platser', to: '/places', icon: 'mdi-map-marker-outline' },
   { title: 'Händelser', to: '/events', icon: 'mdi-calendar-blank-outline' },
   { title: 'Om projektet', to: '/about', icon: 'mdi-information-outline' },
@@ -93,6 +108,25 @@ watch(mobileNav, (isMobile) => {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f1 100%);
+}
+
+.drawer-logo {
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.drawer-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  color: #1b5e20;
+}
+
 .mobile-drawer :deep(.v-list-item--active) {
   font-weight: 600;
 }
@@ -111,8 +145,12 @@ watch(mobileNav, (isMobile) => {
   font-size: 1.1rem;
 }
 
-.nav-logo {
-  font-size: 1.5rem;
+.nav-logo-img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .nav-title {
