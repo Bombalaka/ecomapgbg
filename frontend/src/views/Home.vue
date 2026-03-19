@@ -23,6 +23,22 @@
       </div>
     </section>
 
+    <!-- Empty DB CTA -->
+    <v-alert
+      v-if="loaded && locationCount === 0"
+      type="info"
+      variant="tonal"
+      rounded="xl"
+      class="mb-6"
+      prominent
+    >
+      <strong>Ingen plats i databasen än.</strong>
+      Börja med att lägga till en återbruksplats – då syns den på kartan för alla.
+      <template #append>
+        <v-btn to="/places/add" color="primary" rounded="lg">Lägg till plats</v-btn>
+      </template>
+    </v-alert>
+
     <!-- Categories -->
     <section class="categories">
       <h2 class="section-title">What you'll find</h2>
@@ -71,6 +87,7 @@ import { ref, onMounted } from 'vue'
 import { api } from '../services/api'
 
 const locationCount = ref(0)
+const loaded = ref(false)
 const categories = [
   { icon: '♻️', name: 'Second-hand' },
   { icon: '🌱', name: 'Vegan cafés' },
@@ -85,6 +102,8 @@ onMounted(async () => {
     locationCount.value = locations?.length ?? 0
   } catch (e) {
     console.error('Error loading location count:', e)
+  } finally {
+    loaded.value = true
   }
 })
 </script>

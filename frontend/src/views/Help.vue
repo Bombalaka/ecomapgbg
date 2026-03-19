@@ -48,12 +48,6 @@
         </p>
       </v-card-text>
     </v-card>
-
-    <p class="foot">
-      <router-link to="/about">Om projektet</router-link>
-      ·
-      <router-link to="/places">Platser</router-link>
-    </p>
   </div>
 </template>
 
@@ -102,10 +96,5 @@ code {
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
   font-size: 0.9em;
-}
-
-.foot {
-  margin-top: 1.5rem;
-  font-size: 0.95rem;
 }
 </style>

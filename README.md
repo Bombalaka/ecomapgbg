@@ -33,18 +33,22 @@ ecomapgbg/
 │   ├── Data/
 │   ├── Models/
 │   ├── Services/
-│   └── wwwroot/             # Vue build output (Docker)
-├── frontend/                # Vue 3 + Vuetify SPA
+│   └── wwwroot/            # Vue build output (Docker)
+├── frontend/               # Vue 3 + Vuetify SPA
 │   ├── src/
 │   │   ├── components/
 │   │   ├── views/
 │   │   ├── services/
 │   │   └── router/
 │   └── package.json
+├── docs/
+│   └── ROADMAP.md          # Plan: near-term + future (e.g. eco-resa v3)
 ├── docker-compose.yml
 ├── Dockerfile
 └── .env
 ```
+
+**App routes:** `/` (home), `/places`, `/places/add`, `/events` (Händelser), `/about`, `/help`.
 
 ---
 
