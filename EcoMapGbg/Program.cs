@@ -75,9 +75,31 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new() { Title = "EcoMapGBG API", Version = "v1" });
 });
 
-// MongoDB setup
-var connectionString = builder.Configuration.GetConnectionString("MongoDB") ?? "mongodb://localhost:27020";
-builder.Services.AddSingleton<IMongoClient>(sp => new MongoClient(connectionString));
+// MongoDB setup — .env uses ConnectionStrings__MongoDB (loaded above)
+var connectionString =
+    Environment.GetEnvironmentVariable("ConnectionStrings__MongoDB")
+    ?? builder.Configuration.GetConnectionString("MongoDB")
+    ?? "mongodb://localhost:27020";
+
+Console.WriteLine($"[Startup] MongoDB target: {DescribeMongoTarget(connectionString)}");
+
+builder.Services.AddSingleton<IMongoClient>(_ => new MongoClient(connectionString));
+
+static string DescribeMongoTarget(string cs)
+{
+    if (cs.Contains("localhost", StringComparison.OrdinalIgnoreCase))
+        return "localhost (start Docker Mongo or use Atlas in .env)";
+    if (cs.StartsWith("mongodb+srv://", StringComparison.OrdinalIgnoreCase))
+    {
+        var at = cs.IndexOf('@');
+        if (at > 0)
+        {
+            var host = cs[(at + 1)..].Split('/')[0].Split('?')[0];
+            return $"Atlas SRV → {host}";
+        }
+    }
+    return "custom URI";
+}
 builder.Services.AddScoped<IMongoDatabase>(sp =>
     sp.GetRequiredService<IMongoClient>().GetDatabase("ecomapgbg"));
 
@@ -97,6 +119,20 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Prove Mongo is reachable (index log in repository is fire-and-forget and can lie)
+try
+{
+    var mongo = app.Services.GetRequiredService<IMongoClient>();
+    using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(15));
+    await mongo.ListDatabaseNamesAsync(cts.Token);
+    Console.WriteLine("[Startup] MongoDB connection OK");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"[Startup] MongoDB connection FAILED: {ex.GetType().Name} — {ex.Message}");
+    Console.WriteLine("[Startup] Fix: copy a fresh URI from Atlas → Connect; quote .env if URI has &; check Network Access 0.0.0.0/0");
+}
 
 app.UseForwardedHeaders();
 

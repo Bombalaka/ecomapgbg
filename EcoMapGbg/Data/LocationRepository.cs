@@ -126,16 +126,14 @@ public class MongoLocationRepository : ILocationRepository
         {
             // Index for location-based queries (faster geographical searches)
             var geoIndexKeys = Builders<Location>.IndexKeys.Geo2DSphere(l => new { l.Latitude, l.Longitude });
-            _locations.Indexes.CreateOneAsync(new CreateIndexModel<Location>(geoIndexKeys));
+            _locations.Indexes.CreateOne(new CreateIndexModel<Location>(geoIndexKeys));
 
-            // Index for type queries (faster filtering by location type)
             var typeIndexKeys = Builders<Location>.IndexKeys.Ascending(l => l.Type);
-            _locations.Indexes.CreateOneAsync(new CreateIndexModel<Location>(typeIndexKeys));
+            _locations.Indexes.CreateOne(new CreateIndexModel<Location>(typeIndexKeys));
 
-            // Index for active status (faster queries for active locations)
             var activeIndexKeys = Builders<Location>.IndexKeys.Ascending(l => l.IsActive);
-            _locations.Indexes.CreateOneAsync(new CreateIndexModel<Location>(activeIndexKeys));
-            
+            _locations.Indexes.CreateOne(new CreateIndexModel<Location>(activeIndexKeys));
+
             _logger.LogInformation("Database indexes created successfully");
         }
         catch (Exception ex)
