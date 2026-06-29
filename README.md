@@ -175,6 +175,11 @@ App: http://localhost:5000
 - Inputs are validated client- and server-side.
 - No user tracking or ads.
 
+## DEMO 
+
+https://github.com/user-attachments/assets/7942f4e9-1284-4dac-936d-12cc4543daa4
+
+
 ## License
 
 MIT License – feel free to reuse and contribute.
